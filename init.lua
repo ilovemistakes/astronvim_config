@@ -223,6 +223,12 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      {
+          "iamcco/markdown-preview.nvim",
+          run = function()
+              vim.fn["mkdp#util#install"]()
+          end,
+      }
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
