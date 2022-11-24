@@ -54,6 +54,12 @@ local config = {
       autopairs_enabled = true, -- enable autopairs at start
       diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
+      vdebug_options = {
+          ["port"] = 9003,
+          ["path_maps"] = {
+              ["/srv/api"] = "/Users/chuprovam/portal/backend/api",
+          },
+      },
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -202,6 +208,7 @@ local config = {
   -- Configure plugins
   plugins = {
     init = {
+        { "vim-vdebug/vdebug" },
       -- You can disable default plugins as follows:
       -- ["goolord/alpha-nvim"] = { disable = true },
 
