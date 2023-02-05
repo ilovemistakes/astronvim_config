@@ -280,7 +280,7 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      { "vim-vdebug/vdebug" },
+      -- { "vim-vdebug/vdebug" },
       {
           "iamcco/markdown-preview.nvim",
           run = function()
@@ -406,6 +406,23 @@ local config = {
     --   },
     -- }
   end,
+
+  -- DAP
+  dap = {
+    configurations = {
+      php = {
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug on 9003",
+          port = 9003,
+          pathMappings = {
+              ["/srv/"] = "${workspaceFolder}",
+          },
+        }
+      }
+    }
+  },
 }
 
 return config
