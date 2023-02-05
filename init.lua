@@ -416,6 +416,7 @@ local config = {
           request = "launch",
           name = "Listen for Xdebug on 9003",
           port = 9003,
+          stopOnEntry = true,
           pathMappings = {
               ["/srv/"] = "${workspaceFolder}",
           },
