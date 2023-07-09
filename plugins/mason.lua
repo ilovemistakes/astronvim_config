@@ -21,6 +21,20 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
       -- ensure_installed = { "python" },
+      automatic_setup = {
+        -- modifies the default configurations table
+        -- pass in a function or a list to override with
+        -- the same can be done for adapters and filetypes
+        configurations = function(default)
+          default.php[1].port = 9003
+          default.php[1].stopOnEntry = true
+          default.php[1].pathMappings = {
+            ["/srv/"] = "${workspaceFolder}",
+          }
+
+          return default
+        end,
+      }
     },
   },
 }
