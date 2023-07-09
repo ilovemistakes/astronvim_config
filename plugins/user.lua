@@ -9,4 +9,10 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+      "iamcco/markdown-preview.nvim",
+      run = function()
+          vim.fn["mkdp#util#install"]()
+      end,
+  },
 }
