@@ -15,4 +15,11 @@ return {
           vim.fn["mkdp#util#install"]()
       end,
   },
+  {
+     "catppuccin/nvim",
+      name = "catppuccin",
+      config = function()
+          require("catppuccin").setup {}
+      end,
+  },
 }
