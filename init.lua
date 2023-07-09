@@ -31,7 +31,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -62,6 +62,23 @@ return {
         disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
       },
     },
+  },
+
+  dap = {
+    configurations = {
+      php = {
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug on 9003",
+          port = 9003,
+          stopOnEntry = true,
+          pathMappings = {
+              ["/srv/"] = "${workspaceFolder}",
+          },
+        }
+      }
+    }
   },
 
   -- This function is run last and is a good place to configuring
